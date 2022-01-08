@@ -1,15 +1,19 @@
 import Head from 'next/head';
+import Header from './Header';
+import Footer from './Footer';
 
 export default function Layout({ title, keywords, description, children }) {
   return (
-    <div className='container mt-10 mb-10 pr-7 pl-7 max-w-4xl '>
+    <div className='w-full '>
       <Head>
         <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
       </Head>
+      <Header />
 
       <div className='container mx-auto my-7'>{children}</div>
+      <Footer />
     </div>
   );
 }
