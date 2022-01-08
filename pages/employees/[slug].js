@@ -30,9 +30,9 @@ export default function ColleaguePage({ emp }) {
           </div>
         </div>
         {emp.image && (
-          <div className='justify-center text-center flex lg:flex lg:w-1/2'>
+          <div className=' flex lg:flex lg:w-1/2'>
             <Image
-              src={emp.image}
+              src={emp.image.formats.large.url}
               width={250}
               height={320}
               alt='Profile image'
@@ -54,7 +54,7 @@ export default function ColleaguePage({ emp }) {
 }
 
 export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/api/employees/${slug}`);
+  const res = await fetch(`${API_URL}/employees?slug=${slug}`);
   const employees = await res.json();
   return {
     props: {
