@@ -1,3 +1,5 @@
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
+import { useContext } from 'react';
 import Link from 'next/link';
 
 export default function Header() {
@@ -20,6 +22,12 @@ export default function Header() {
           <Link href='#'>
             <a className='mx-5 cursor-pointer uppercase hover:text-indigo-300'>
               What we do
+            </a>
+          </Link>
+
+          <Link href='/employees/add'>
+            <a className='mx-5 cursor-pointer uppercase hover:text-indigo-300'>
+              Add Colleage
             </a>
           </Link>
         </nav>
