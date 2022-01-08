@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import Showcase from './Showcase';
 
 export default function Layout({ title, keywords, description, children }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ title, keywords, description, children }) {
         <meta name='keywords' content={keywords} />
       </Head>
       <Header />
+      <Showcase />
 
       <div className='container mx-auto my-7'>{children}</div>
       <Footer />
