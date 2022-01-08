@@ -17,7 +17,7 @@ export default function EmployeesPage({ employees }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/employees`);
+  const res = await fetch(`${API_URL}/employees?_sort=name`);
   const employees = await res.json();
 
   return {

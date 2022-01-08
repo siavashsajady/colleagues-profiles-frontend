@@ -7,7 +7,11 @@ export default function EmployeeItem({ emp }) {
     <div className=' max-w-sm w-full justify-center text-center flex card  lg:max-w-full lg:flex '>
       <div className='w-128 h-60 ml-3 flex card '>
         <Image
-          src={emp.image ? emp.image : '/images/employee-default.jpg'}
+          src={
+            emp.image
+              ? emp.image.formats.medium.url
+              : '/images/employee-default.jpg'
+          }
           width={200}
           height={270}
           alt='employee image'
