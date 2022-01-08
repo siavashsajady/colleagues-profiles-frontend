@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "َAleksi Clark",
+      "slug": "aleksi-clark",
+      "office": "Stockholm",
+      "description": "Ever since I was a kid I've always been interested in computers. It started with gaming, primarily World of Warcraft. I later discovered video editing, visual effects, and music composing, and during my teens, I was convinced that my career would be to become a VFX artist or film composer like Hans Zimmer or Howard Shore.",
+      "image": "/images/sample/employee1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Anders Pante ",
+      "slug": "anders-pante",
+      "office": "Stockholm",
+      "description": "What led you to this moment? With more than 20 years in the IT-business I have created a passion for developing people.I feel that the people are our soul, and It's my passion to create a dynamic environment for them to develop their passion. Every single day, I strive to be a better person and try hard to start each day with a smile - even though some days are harder than others!",
+      "image": "/images/sample/employee2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Anton Voigt",
+      "slug": "anton-voigt",
+      "office": "Lund",
+      "description": "I've always been very interested in mathematics and logical puzzles. At the same time, I've always liked experimenting and exploringcreative endeavors. I think this is the reason I fell in love with programming right from the start. For me, software development is a combination of creativity and logic. It allows for the creation of something, from nothing. ",
+      "image": "/images/sample/employee3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Artem Olsson",
+      "slug": "artem-olsson",
+      "office": "Lund",
+      "description": "My interest in technology started a long while ago when I got my hands on my dads computer when I was a kid. During university, I got introduced to programming which enhanced my already pretty high-interest technology.Being a problem solver - programming tasks seemed like a perfect fit for me. I found out that taking (sometimes somewhat abstract) ideas to solve business problems using the software was something that I highly enjoyed doing. ",
+      "image": "/images/sample/employee4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Axel Deniz",
+      "slug": "axel-deniz",
+      "office": "Stockholm",
+      "description": "I am a frontend developer passionate about building a healthier and more accessible internet. I decided to enter the tech industry after taking free university classes on edX and realising what a powerful educational resource the web could be.Since becoming a developer I’ve had the opportunity to work with diverse clients ranging from small veterinarian offices to national non-profit organisations. ",
+      "image": "/images/sample/employee5.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Charlie Lind",
+      "slug": "charlie-lindmark",
+      "office": "Lund",
+      "description": "I remember reading all those thick encyclopedias to check historical facts and learn what others have already invested knowledge in and hoping that one day I might have a space on those pages. I grew up to realize that we don’t need those big heavy books with thousands of pages, the publishing companies or authorities to approve what I know and what I share. That is the era of world wide web; there's tons of information waiting to become someone elses knowledge.",
+      "image": "/images/sample/employee6.jpg"
+    }
+  ]
+}
