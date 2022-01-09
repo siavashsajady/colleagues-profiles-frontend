@@ -4,8 +4,9 @@ import { FaImage } from 'react-icons/fa';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Modal from '@/components/Modal';
 import Image from 'next/image';
+import Modal from '@/components/Modal';
+import ImageUpload from '@/components/ImageUpload';
 import Layout from '@/components/Layout';
 import { API_URL } from '@/config/index';
 
@@ -58,6 +59,13 @@ export default function EditEmployeePage({ emp }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/employees/${emp.id}`);
+    const data = await res.json();
+    setImagePreview(data.image.formats.thumbnail.url);
+    setShowModal(false);
   };
 
   return (
@@ -165,7 +173,7 @@ export default function EditEmployeePage({ emp }) {
         </div>
       </div>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        IMAGE UPLOAD
+        <ImageUpload empId={emp.id} imageUploaded={imageUploaded} />
       </Modal>
     </Layout>
   );
