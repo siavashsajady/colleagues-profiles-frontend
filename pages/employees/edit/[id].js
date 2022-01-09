@@ -4,6 +4,7 @@ import { FaImage } from 'react-icons/fa';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Modal from '@/components/Modal';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { API_URL } from '@/config/index';
@@ -18,6 +19,8 @@ export default function EditEmployeePage({ emp }) {
   const [imagePreview, setImagePreview] = useState(
     emp.image ? emp.image.formats.thumbnail.url : null
   );
+
+  const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();
 
@@ -161,6 +164,9 @@ export default function EditEmployeePage({ emp }) {
           </div>
         </div>
       </div>
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        IMAGE UPLOAD
+      </Modal>
     </Layout>
   );
 }

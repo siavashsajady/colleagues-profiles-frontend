@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import Header from './Header';
+import { useRouter } from 'next/router';
 import Footer from './Footer';
 import Search from './Search';
 import Showcase from './Showcase';
 
 export default function Layout({ title, keywords, description, children }) {
+  const router = useRouter();
   return (
     <div className='w-full '>
       <Head>
@@ -14,7 +16,7 @@ export default function Layout({ title, keywords, description, children }) {
       </Head>
       <Header />
       <Search />
-      <Showcase />
+      {router.pathname === '/' && <Showcase />}
 
       <div className='container mx-auto my-7'>{children}</div>
       <Footer />
