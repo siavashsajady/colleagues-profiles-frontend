@@ -20,7 +20,7 @@ export default async (req, res) => {
     console.log(data.jwt);
 
     if (strapiRes.ok) {
-      // Set Cookie
+      // Set Cookie on the Server Side
       res.setHeader(
         'Set-Cookie',
         cookie.serialize('token', data.jwt, {
