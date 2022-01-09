@@ -1,8 +1,11 @@
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
 import { useContext } from 'react';
 import Link from 'next/link';
+import AuthContext from '@/context/AuthContext';
 
 export default function Header() {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <header className='bg-gray-900 text-gray-100 shadow w-full  sm:px-2 '>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
@@ -25,17 +28,37 @@ export default function Header() {
             </a>
           </Link>
 
-          <Link href='/employees/add'>
-            <a className='mx-5 cursor-pointer uppercase hover:text-indigo-300'>
-              Add Colleage
-            </a>
-          </Link>
-          <Link href='/account/login'>
-            <a className='cursor-pointer uppercase hover:text-indigo-300 font-bold py-2 px-4 flex items-center md:justify-start mb-4 md:mb-0'>
-              <FaSignInAlt className=' mr-2' />
-              Login
-            </a>
-          </Link>
+          {user ? (
+            // If logged in
+            <>
+              <Link href='/employees/add'>
+                <a className='mx-5 cursor-pointer uppercase hover:text-indigo-300'>
+                  Add Colleage
+                </a>
+              </Link>
+              <Link href='/account/dashboard'>
+                <a className='mx-5 cursor-pointer uppercase hover:text-indigo-300'>
+                  Dashboard
+                </a>
+              </Link>
+              <button
+                onClick={() => logout()}
+                className='cursor-pointer uppercase hover:text-indigo-300 font-bold py-2 px-4 flex items-center md:justify-start mb-4 md:mb-0'
+              >
+                <FaSignOutAlt /> Logout
+              </button>
+            </>
+          ) : (
+            //If logged out
+            <>
+              <Link href='/account/login'>
+                <a className='cursor-pointer uppercase hover:text-indigo-300 font-bold py-2 px-4 flex items-center md:justify-start mb-4 md:mb-0'>
+                  <FaSignInAlt className=' mr-2' />
+                  Login
+                </a>
+              </Link>
+            </>
+          )}
         </nav>
       </div>
     </header>
