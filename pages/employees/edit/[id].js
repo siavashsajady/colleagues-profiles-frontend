@@ -1,6 +1,7 @@
+import { FaImage } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaImage } from 'react-icons/fa';
+import { parseCookies } from '@/helpers/index';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -10,7 +11,7 @@ import ImageUpload from '@/components/ImageUpload';
 import Layout from '@/components/Layout';
 import { API_URL } from '@/config/index';
 
-export default function EditEmployeePage({ emp }) {
+export default function EditEmployeePage({ emp, token }) {
   const [values, setValues] = useState({
     name: emp.name,
     office: emp.office,
@@ -41,12 +42,13 @@ export default function EditEmployeePage({ emp }) {
       method: 'Put',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
     if (!res.ok) {
       if (res.status === 403 || res.status === 401) {
-        toast.error('No token included');
+        toast.error('Unauthoized');
         return;
       }
       toast.error('Something Went Wrong');
@@ -173,14 +175,18 @@ export default function EditEmployeePage({ emp }) {
         </div>
       </div>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <ImageUpload empId={emp.id} imageUploaded={imageUploaded} />
+        <ImageUpload
+          empId={emp.id}
+          imageUploaded={imageUploaded}
+          token={token}
+        />
       </Modal>
     </Layout>
   );
 }
 
 export async function getServerSideProps({ params: { id }, req }) {
-  console.log(req.headers.cookie);
+  const { token } = parseCookies(req);
 
   const res = await fetch(`${API_URL}/employees/${id}`);
   const emp = await res.json();
@@ -188,6 +194,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   return {
     props: {
       emp,
+      token,
     },
   };
 }

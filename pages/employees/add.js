@@ -1,3 +1,4 @@
+import { parseCookies } from '@/helpers/index';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
@@ -6,7 +7,7 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { API_URL } from '@/config/index';
 
-export default function AddEmployeePage() {
+export default function AddEmployeePage({ token }) {
   const [values, setValues] = useState({
     name: '',
     office: '',
@@ -31,6 +32,7 @@ export default function AddEmployeePage() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
@@ -128,4 +130,14 @@ export default function AddEmployeePage() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps({ req }) {
+  const { token } = parseCookies(req);
+
+  return {
+    props: {
+      token,
+    },
+  };
 }
