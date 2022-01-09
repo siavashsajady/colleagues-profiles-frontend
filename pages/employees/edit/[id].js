@@ -70,7 +70,7 @@ export default function EditEmployeePage({ emp }) {
 
   return (
     <Layout title='Add New Employee'>
-      <div className='container mx-auto   px-6 my-12'>
+      <div className='container mx-auto px-6 my-12'>
         <button className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded '>
           <Link href='/'>Go Back</Link>
         </button>

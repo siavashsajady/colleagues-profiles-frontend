@@ -30,6 +30,12 @@ export default function Header() {
               Add Colleage
             </a>
           </Link>
+          <Link href='/account/login'>
+            <a className='cursor-pointer uppercase hover:text-indigo-300 font-bold py-2 px-4 flex items-center md:justify-start mb-4 md:mb-0'>
+              <FaSignInAlt className=' mr-2' />
+              Login
+            </a>
+          </Link>
         </nav>
       </div>
     </header>
