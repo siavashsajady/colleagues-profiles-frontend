@@ -179,7 +179,9 @@ export default function EditEmployeePage({ emp }) {
   );
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getServerSideProps({ params: { id }, req }) {
+  console.log(req.headers.cookie);
+
   const res = await fetch(`${API_URL}/employees/${id}`);
   const emp = await res.json();
 
