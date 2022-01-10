@@ -7,8 +7,11 @@ export default function Header() {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <header className='bg-gray-900 text-gray-100 shadow w-full  sm:px-2 '>
-      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
+    <header
+      className='bg-gray-900 text-gray-100 shadow   w-full items-center sm:px-2 lg:pl-12  lg:pr-12 '
+      data-cy='nav-item'
+    >
+      <div className='container md:mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
         <Link href='/'>
           <a className='flex md:w-1/5 title-font font-medium items-center md:justify-start mb-4 md:mb-0'>
             <span className='ml-3 text-xl md:text-3xl'>Tretton37</span>
