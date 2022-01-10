@@ -1,5 +1,6 @@
 import { GoLocation } from 'react-icons/go';
 import { GoHome } from 'react-icons/go';
+import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
@@ -10,9 +11,9 @@ export default function ColleaguePage({ emp }) {
   const router = useRouter();
 
   return (
-    <Layout>
-      <div className='container mx-auto   px-6 my-12'>
-        <div className='lg:w-1/2 lg:h-auto px-8 pt-6 pb-8 mb-4 bg-white'>
+    <Layout title={emp.name}>
+      <div className=' w-full max-w-screen-2xl flex justify-between  pl-4 pr-4 lg:pl-12 lg:pr-12'>
+        <div className=' w-1/2 flex flex-col  bg-white'>
           <div>
             <h1 className='text-3xl font-semibold text-gray-800 md:text-4xl'>
               {emp.name}
@@ -30,26 +31,20 @@ export default function ColleaguePage({ emp }) {
             </div>
           </div>
         </div>
-        {emp.image && (
-          <div className=' flex lg:flex lg:w-1/2'>
-            <Image
-              src={emp.image.formats.large.url}
-              width={250}
-              height={320}
-              alt='Profile image'
-              className='h-full object-cover justify-items-center'
-            />
-          </div>
-        )}
-
-        <div className='flex justify-center lg:justify-start mt-6'>
-          <button className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded '>
-            <Link href='/'>
-              <a className='flex justify-center'>
-                <GoHome className='mr-1 mt-1' /> Go Back
-              </a>
-            </Link>
-          </button>
+        <div className=' w-1/2 flex flex-col relative mt-20  '>
+          {emp.image && (
+            <div className=' flex lg:flex lg:w-1/2 '>
+              <div className='mx-auto md:p-10  px-6 my-12'>
+                <Image
+                  src={emp.image.formats.large.url}
+                  width={250}
+                  height={320}
+                  alt='Profile image'
+                  className='h-full object-cover justify-items-center'
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Layout>
