@@ -1,4 +1,5 @@
 import { GoLocation } from 'react-icons/go';
+import { GoHome } from 'react-icons/go';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
@@ -42,11 +43,13 @@ export default function ColleaguePage({ emp }) {
         )}
 
         <div className='flex justify-center lg:justify-start mt-6'>
-          <Link href='/'>
-            <a className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded'>
-              {'<'} Go Back
-            </a>
-          </Link>
+          <button className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded '>
+            <Link href='/'>
+              <a className='flex justify-center'>
+                <GoHome className='mr-1 mt-1' /> Go Back
+              </a>
+            </Link>
+          </button>
         </div>
       </div>
     </Layout>

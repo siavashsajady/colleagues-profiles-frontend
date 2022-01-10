@@ -16,7 +16,7 @@ export default function Search() {
   return (
     <div className='relative bg-gray-200 p-4'>
       <div className='container mx-auto flex items-center justify-center md:justify-end'>
-        <div className='relative text-gray-200 w-72'>
+        <div className='relative text-gray-800 w-72'>
           <form onSubmit={handleSubmit}>
             <input
               className='bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-72'

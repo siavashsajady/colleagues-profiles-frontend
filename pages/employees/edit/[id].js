@@ -1,4 +1,5 @@
 import { FaImage } from 'react-icons/fa';
+import { GoHome } from 'react-icons/go';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { parseCookies } from '@/helpers/index';
@@ -74,7 +75,11 @@ export default function EditEmployeePage({ emp, token }) {
     <Layout title='Add New Employee'>
       <div className='container mx-auto px-6 my-12'>
         <button className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded '>
-          <Link href='/'>Go Back</Link>
+          <Link href='/'>
+            <a className='flex justify-center'>
+              <GoHome className='mr-1 mt-1' /> Go Back
+            </a>
+          </Link>
         </button>
         <h1 className='text-3xl border-b-4 mt-3 pb-5 font-bold text-blue-500'>
           Edit Colleages Profile

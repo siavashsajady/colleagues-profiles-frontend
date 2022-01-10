@@ -1,3 +1,4 @@
+import { GoHome } from 'react-icons/go';
 import qs from 'qs';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -11,7 +12,11 @@ export default function SearchPage({ employees }) {
     <Layout title='Search Results'>
       <div className='container mx-auto   px-6 my-12'>
         <button className='bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-2 px-4 rounded '>
-          <Link href='/'>Go Back</Link>
+          <Link href='/'>
+            <a className='flex justify-center'>
+              <GoHome className='mr-1 mt-1' /> Go Back
+            </a>
+          </Link>
         </button>
 
         <div className='text-3xl text-gray-700 border-b-4 pb-5 font-bold'>
